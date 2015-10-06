@@ -17,7 +17,7 @@ import celery.task  # noqa
 
 
 def JsonResponse(response):
-    return HttpResponse(serialize(response), mimetype='application/json')
+    return HttpResponse(serialize(response), content_type='application/json')
 
 
 def task_view(task):
@@ -59,7 +59,7 @@ def is_task_successful(request, task_id):
     """Returns task execute status in JSON format."""
     response_data = {'task': {'id': task_id,
                               'executed': AsyncResult(task_id).successful()}}
-    return HttpResponse(serialize(response_data), mimetype='application/json')
+    return HttpResponse(serialize(response_data), content_type='application/json')
 
 
 def task_status(request, task_id):
