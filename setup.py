@@ -13,7 +13,7 @@ except ImportError:
 from distutils.command.install import INSTALL_SCHEMES
 
 # -*- Distribution Meta -*-
-NAME = 'django-celery'
+NAME = 'django-celery-mc'
 
 import re
 re_meta = re.compile(r'__(\w+?)__\s*=\s*(.*)')
